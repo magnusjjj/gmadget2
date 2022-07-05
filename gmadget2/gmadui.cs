@@ -1,4 +1,5 @@
 using GmadDownloadAPINamespace;
+using System.Text.RegularExpressions;
 
 namespace gmadget2
 {
@@ -7,6 +8,15 @@ namespace gmadget2
         public gmadui()
         {
             InitializeComponent();
+            Log(GmadDownloadAPI.LocateGMADexe());
+            /*            try
+                        {
+                            Log(GmadDownloadAPI.LocateGMADexe());
+                        }
+                        catch (Exception e)
+                        {*/
+            //Log("Could not find garrys mod!");
+            //}
         }
 
         private void btnGo_Click(object sender, EventArgs e)
@@ -35,6 +45,9 @@ namespace gmadget2
         private void GmadDownloadAPI_OutputDataReceived(object? sender, string e)
         {
             Log(e);
+
+
+            //Success.Downloaded item 2811906809 to "C:\Users\Tuxie\source\repos\gmadget2\gmadget2\bin\Debug\net6.0-windows\steamapps\workshop\content\4000\2811906809"
         }
     }
 }

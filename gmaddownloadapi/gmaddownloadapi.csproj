@@ -8,6 +8,31 @@
 
   <ItemGroup>
     <PackageReference Include="SteamCMD.ConPTY" Version="1.2.0" />
+    <PackageReference Include="SteamWebAPI2" Version="4.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Indieteur.SAMAPI">
+      <HintPath>Indieteur.SAMAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Indieteur.VDFAPI">
+      <HintPath>Indieteur.VDFAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Indieteur.SAMAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Indieteur.SAMAPI.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Indieteur.VDFAPI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Indieteur.VDFAPI.pdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
