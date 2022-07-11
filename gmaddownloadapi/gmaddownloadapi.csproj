@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="LZMA-SDK" Version="19.0.0" />
     <PackageReference Include="SteamCMD.ConPTY" Version="1.2.0" />
     <PackageReference Include="SteamWebAPI2" Version="4.3.2" />
   </ItemGroup>
@@ -22,16 +23,16 @@
 
   <ItemGroup>
     <None Update="Indieteur.SAMAPI.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Indieteur.SAMAPI.pdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Indieteur.VDFAPI.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Indieteur.VDFAPI.pdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

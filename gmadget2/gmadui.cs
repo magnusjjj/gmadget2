@@ -8,22 +8,14 @@ namespace gmadget2
         public gmadui()
         {
             InitializeComponent();
-            Log(GmadDownloadAPI.LocateGMADexe());
-            /*            try
-                        {
-                            Log(GmadDownloadAPI.LocateGMADexe());
-                        }
-                        catch (Exception e)
-                        {*/
-            //Log("Could not find garrys mod!");
-            //}
+            GmadDownloadAPI.TitleReceived += GmadDownloadAPI_TitleReceived;
+            GmadDownloadAPI.OutputDataReceived += GmadDownloadAPI_OutputDataReceived;
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
-            GmadDownloadAPI.TitleReceived += GmadDownloadAPI_TitleReceived;
-            GmadDownloadAPI.OutputDataReceived += GmadDownloadAPI_OutputDataReceived;
-            GmadDownloadAPI.DownloadMod(txtURL.Text);
+            var t = new Thread(() => GmadDownloadAPI.CreateAndRunScript(txtURL.Text));
+            t.Start();
         }
 
         private void Log(string text)
@@ -33,7 +25,8 @@ namespace gmadget2
                 this.Invoke(new Action<string>(Log), new object[] { text });
                 return;
             }
-            txtLog.Text += text;
+
+            txtLog.AppendText(text);
         }
 
         private void GmadDownloadAPI_TitleReceived(object? sender, string e)
